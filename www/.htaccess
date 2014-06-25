@@ -1,0 +1,12 @@
+RewriteEngine on
+RewriteBase /
+RewriteCond %{REQUEST_URI} !^/(index\.php|img|js|css|font|robots\.txt|favicon\.ico|health_check\.txt)
+RewriteRule ^(.*)$ /index.php/$1 [L]
+
+#Disable these on dev servers
+#RewriteCond %{HTTPS} off
+#RewriteCond %{HTTP_HOST} !^www\.(.*)$ [NC]
+#RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/$1 [R=301,L]
+#RewriteCond %{HTTPS} on
+#RewriteCond %{HTTP_HOST} !^www\.(.*)$ [NC]
+#RewriteRule ^(.*)$ https://www.%{HTTP_HOST}/$1 [R=301,L]

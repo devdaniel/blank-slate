@@ -1,0 +1,52 @@
+{if !isset($noheader) && $output != 'tv'}
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            {if $logged_in == 1}
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            {/if}
+            <a class="brand" href="{base_url()}"><img src="{base_url()}img/mini-logo.png" /></a>
+            {if $logged_in == 1}
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    <li class="dropdown{if $page == 'welcome'} active{/if}">
+                        <a href="{base_url()}welcome"><i class="icon-home icon-large"></i></a>
+                    </li>
+                    {if $client_type == 'ADVERTISER'}
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{base_url()}welcome">Menu Item</a></li>
+                        </ul>
+                    </li>
+                    {/if}
+                </ul>
+                <ul class="nav pull-right">
+                    <li class="current_client visible-desktop">
+                        <a>Your Name Here</a>
+                    </li>
+                    <li>
+                        <a href="{base_url()}support" target="_blank">Help</a>
+                    </li>
+                    <li class="dropdown{if $page == 'user' || $page == 'client'} active{/if}">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Account <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li class="disabled title"><a href="#">{$given_name}</a></li>
+                            <li><a href="{base_url()}user">User Settings</a></li>
+                            <li class="divider"></li>
+                            <li><a href="{base_url()}logout"><i class="icon-off"></i> <i style="color:#800;">Log Out</i></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            {else}
+            <img class="hidden-phone" src="{base_url()}img/slogan.png" style="padding: 12px 0;" />
+            {/if}
+        </div>
+    </div>
+</div>
+{/if}
