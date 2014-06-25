@@ -14,7 +14,6 @@
         <title>{block name="title"}{/block} - Website</title>
 
         <link rel="stylesheet" href="{$css['bootstrap']}" />
-        <link rel="stylesheet" href="{$css['bootstrap-responsive']}" />
         <link rel="stylesheet" href="{$css['bootstrap-select']}" />
         <link rel="stylesheet" href="{$css['font-awesome']}" />
         <link rel="stylesheet" href="{$css['jqueryui']}" />
