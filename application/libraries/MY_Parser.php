@@ -52,6 +52,7 @@ class MY_Parser extends CI_Parser {
         $this->load->config('scripts');
         $data['js'] = $this->config->item('js_paths');
         $data['css'] = $this->config->item('css_paths');
+        $data['cdn'] = $this->config->item('cdn_path');
 
         // If we have variables to assign, lets assign them
         if ($data) {
